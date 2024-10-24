@@ -12,6 +12,46 @@ sys_fork(void)
 {
   return fork();
 }
+// --- system call definitions of our functions
+int sys_thread_create(){
+  void (*fn)(void *);
+  void *stack;
+  void *args;
+  argint(0, &fn);
+  argint(1, &stack);
+  argint(2, &args);
+
+  return thread_create(fn, stack, args);
+}
+
+int sys_thread_join(){
+
+  return thread_join();
+}
+
+int sys_thread_exit(){
+
+  return thread_exit();
+}
+
+int sys_lock_init(){
+  lock_t *lock;
+  argint(0, &lock);
+  return lock_init(lock);
+}
+
+int sys_lock_aquire(){
+  lock_t *lock;
+  argint(0, &lock);
+  return lock_aquire(lock);
+}
+
+int sys_release(){
+  lock_t *lock;
+  argint(0, &lock);
+  return lock_release(lock);
+}
+// --- end
 
 int
 sys_exit(void)

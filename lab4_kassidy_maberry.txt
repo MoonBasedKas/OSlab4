@@ -2,6 +2,7 @@ ESTIMATE of time to complete lab: 6 hours
       Start  Time   Lab 
 DATE  Time   Spent  Part  Work Completed
 ----  -----  -----  ----  ---------
-
+10/22 18:00  00:15  -     Set up lab directory.
+10/24 13:30  00:30  1,2   Added new system calls to be callable.
           -----
-          00:00 TOTAL time Spent
+          00:45 TOTAL time Spent
