@@ -12,6 +12,11 @@ struct {
   struct proc proc[NPROC];
 } ptable;
 
+// ----- Temporary definitoin
+
+
+
+
 static struct proc *initproc;
 
 int nextpid = 1;
@@ -19,7 +24,8 @@ extern void forkret(void);
 extern void trapret(void);
 
 static void wakeup1(void *chan);
-
+// -----------------------------------------------------------------
+// --- Start threads
 int thread_create(void (*fn)(void *), void *stack, void *arg){
 
 }
@@ -31,7 +37,21 @@ int thread_join(void){
 int thread_exit(void){
   
 }
+// --- Start locking
 
+int lock_init(lock_t *lock){
+  return 0;
+}
+
+int lock_aquire(lock_t *lock){
+  return 0;
+}
+
+int lock_release(lock_t *lock){
+  return 0;
+}
+
+// -----------------------------------------------------------------
 void
 pinit(void)
 {

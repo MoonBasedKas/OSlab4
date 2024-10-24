@@ -103,6 +103,10 @@ int             pipewrite(struct pipe*, char*, int);
 
 //PAGEBREAK: 16
 // proc.c
+struct lock_t {
+  int x;
+} ;
+typedef struct lock_t lock_t;
 int             cpuid(void);
 void            exit(void);
 int             fork(void);
@@ -120,6 +124,12 @@ void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
 void            yield(void);
+int             thread_create(void (*fn)(void *), void *stack, void *arg);
+int             thread_join(void);
+int             thread_exit(void);
+int             lock_init(lock_t *lock); // fix this
+int             lock_aquire(lock_t *lock);
+int             lock_release(lock_t *lock);
 
 // swtch.S
 void            swtch(struct context**, struct context*);
